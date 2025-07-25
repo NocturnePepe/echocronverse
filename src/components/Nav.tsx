@@ -1,11 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 
 const Nav: React.FC = () => {
+  const location = useLocation();
+  
   const navItems = [
-    { name: 'Echocronverse', href: '#home' },
-    { name: 'CronoXai', href: '#cronoxai' },
-    { name: 'EchoDEX', href: '#echodex' }
+    { name: 'Echocronverse', path: '/' },
+    { name: 'CronoXai', path: '/cronoxai' },
+    { name: 'EchoDEX', path: '/echodex' },
+    { name: 'Wallet', path: '/wallet' }
   ];
 
   return (
@@ -18,28 +22,38 @@ const Nav: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center h-16">
           <div className="flex space-x-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.6, 
-                  delay: index * 0.1,
-                  ease: "easeOut" 
-                }}
-                whileHover={{ 
-                  scale: 1.05,
-                  textShadow: "0 0 8px rgb(59 130 246 / 0.8)"
-                }}
-                className="text-zinc-100 hover:text-blue-400 px-3 py-2 text-sm font-medium tracking-wider transition-all duration-300 relative group"
-                style={{ fontFamily: 'Unbounded, cursive' }}
-              >
-                {item.name}
-                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </motion.a>
-            ))}
+            {navItems.map((item, index) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: index * 0.1,
+                    ease: "easeOut" 
+                  }}
+                >
+                  <Link
+                    to={item.path}
+                    className={`px-3 py-2 text-sm font-medium tracking-wider transition-all duration-300 relative group ${
+                      isActive 
+                        ? 'text-blue-400' 
+                        : 'text-zinc-100 hover:text-blue-400'
+                    }`}
+                    style={{ fontFamily: 'Unbounded, cursive' }}
+                  >
+                    {item.name}
+                    <span 
+                      className={`absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 transform transition-transform duration-300 origin-left ${
+                        isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                      }`}
+                    ></span>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
