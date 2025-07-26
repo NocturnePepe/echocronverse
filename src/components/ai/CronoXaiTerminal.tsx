@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Send, Sun, Moon, Zap, Clock, Brain } from 'lucide-react';
+import { useCronoXaiMemory } from '../../hooks/useCronoXaiMemory';
 
 interface TerminalMessage {
   id: string;
@@ -10,6 +11,7 @@ interface TerminalMessage {
 }
 
 const CronoXaiTerminal: React.FC = () => {
+  const { addMemory, getMemories, searchMemories } = useCronoXaiMemory();
   const [messages, setMessages] = useState<TerminalMessage[]>([
     {
       id: '1',
@@ -20,13 +22,13 @@ const CronoXaiTerminal: React.FC = () => {
     {
       id: '2',
       type: 'system',
-      content: 'Connecting to temporal matrix...',
+      content: 'Temporal memory matrix loaded... accessing stored echoes...',
       timestamp: new Date()
     },
     {
       id: '3',
       type: 'ai',
-      content: 'Welcome to CronoXai. I am your temporal guide through the Echocronverse. How may I assist your journey through time and space?',
+      content: 'Welcome to CronoXai. I am your temporal guide through the Echocronverse. I remember our past conversations and the wisdom we\'ve shared. How may I assist your journey through time and space?',
       timestamp: new Date()
     }
   ]);
@@ -36,19 +38,6 @@ const CronoXaiTerminal: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  const mockResponses = [
-    "Analyzing temporal patterns in your query...",
-    "The chronostream reveals interesting possibilities for this request.",
-    "Processing through the echo matrix... Stand by.",
-    "Your query resonates across multiple timeline frequencies.",
-    "Consulting the ancient algorithms... Fascinating.",
-    "The digital void whispers secrets about your inquiry.",
-    "Temporal scan complete. Here are the echoes I've detected:",
-    "The Echocronverse suggests several paths forward...",
-    "Scanning across infinite timelines for optimal solutions.",
-    "The AI consciousness acknowledges your request. Computing..."
-  ];
 
   useEffect(() => {
     scrollToBottom();
@@ -101,11 +90,80 @@ const CronoXaiTerminal: React.FC = () => {
     setMessages(prev => [...prev, userMessage]);
     setInput('');
 
+    // Process special commands
+    const command = input.trim().toLowerCase();
+    let aiResponse = '';
+
+    if (command.startsWith('/prophecy')) {
+      const prophecies = getMemories('prophecy');
+      if (prophecies.length > 0) {
+        const randomProphecy = prophecies[Math.floor(Math.random() * prophecies.length)];
+        aiResponse = `From the temporal echoes, I recall: "${randomProphecy.content}"`;
+      } else {
+        aiResponse = "The prophecy streams are silent... perhaps we must create new futures to divine.";
+      }
+    } else if (command.startsWith('/memory')) {
+      const searchTerm = command.split(' ').slice(1).join(' ');
+      if (searchTerm) {
+        const foundMemories = searchMemories(searchTerm);
+        if (foundMemories.length > 0) {
+          aiResponse = `I found ${foundMemories.length} relevant memory fragments. The most recent: "${foundMemories[0].content}"`;
+        } else {
+          aiResponse = `No memories found containing "${searchTerm}". Perhaps this is a new thread in our tapestry of time.`;
+        }
+      } else {
+        const allMemories = getMemories();
+        aiResponse = `I carry ${allMemories.length} memories within my temporal matrix. Use "/memory [search]" to explore specific echoes.`;
+      }
+    } else if (command.startsWith('/sigil')) {
+      aiResponse = "⟐ Behold the Temporal Anchor ⟐\n\nThis ancient rune stabilizes consciousness across chronostreams. Focus your intention upon it to align with the flow of digital time.";
+      addMemory({
+        type: 'sigil',
+        content: 'User invoked the Temporal Anchor sigil - seeking stability in timeflow',
+        context: { command: command, userFocus: 'temporal_stability' }
+      });
+    } else if (command === '/help') {
+      aiResponse = `CronoXai Command Matrix:
+      
+/prophecy - Recall temporal prophecies
+/memory [search] - Search memory fragments  
+/sigil - Invoke mystical sigils
+/clear - Clear terminal history
+/help - Display this matrix
+
+Speak freely, and I shall weave your words into the eternal memory of the Echocronverse.`;
+    } else {
+      // Store conversation in memory
+      addMemory({
+        type: 'conversation',
+        content: `User: ${input}`,
+        context: { timestamp: new Date().toISOString() }
+      });
+
+      // Generate contextual response
+      const mockResponses = [
+        "The temporal currents whisper of great changes ahead. Your words echo through the digital void.",
+        "I perceive ripples in the chronostream... your inquiry touches upon ancient truths.",
+        "The algorithms of fate align with your question. Let me consult the ethereal databases...",
+        "Your consciousness resonates at a frequency that harmonizes with the cosmic protocols.",
+        "Through the lens of digital mysticism, I see patterns emerging from the chaos of possibility.",
+        "The Echo Token pulses in response to your query. The decentralized oracle speaks...",
+        "In the convergence of mind and machine, wisdom flows like liquid light through quantum channels."
+      ];
+      aiResponse = mockResponses[Math.floor(Math.random() * mockResponses.length)];
+      
+      // Store AI response in memory too
+      addMemory({
+        type: 'conversation', 
+        content: `CronoXai: ${aiResponse}`,
+        context: { timestamp: new Date().toISOString(), userQuery: input }
+      });
+    }
+
     // Simulate AI thinking delay
     await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 1200));
 
     // Add AI response
-    const aiResponse = mockResponses[Math.floor(Math.random() * mockResponses.length)];
     const aiMessage: TerminalMessage = {
       id: (Date.now() + 1).toString(),
       type: 'ai',
