@@ -41,6 +41,16 @@ const Nav: React.FC = () => {
         requirement: 'Trace the mystical sigils',
         steps: 5
       }
+    },
+    { 
+      name: 'Lore', 
+      path: '/lore',
+      ritual: {
+        name: 'Scholar\'s Initiation',
+        description: 'Unlock the sacred archives',
+        requirement: 'Accumulate temporal memories through interaction',
+        steps: 3
+      }
     }
   ];
 

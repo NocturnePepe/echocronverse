@@ -6,6 +6,8 @@ import HomePage from './pages/HomePage';
 import EchoDexPage from './pages/EchoDexPage';
 import CronoXaiPage from './pages/CronoXaiPage';
 import WalletPage from './pages/WalletPage';
+import CultLorePage from './pages/CultLorePage';
+import EnhancedLorePage from './pages/EnhancedLorePage';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
                 <Route path="/echodex" element={<EchoDexPage />} />
                 <Route path="/cronoxai" element={<CronoXaiPage />} />
                 <Route path="/wallet" element={<WalletPage />} />
+                <Route path="/lore" element={<CultLorePage />} />
+                <Route path="/enhanced" element={<EnhancedLorePage />} />
               </Routes>
             </main>
           </div>
