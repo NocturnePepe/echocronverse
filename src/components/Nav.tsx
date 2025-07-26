@@ -51,6 +51,16 @@ const Nav: React.FC = () => {
         requirement: 'Accumulate temporal memories through interaction',
         steps: 3
       }
+    },
+    { 
+      name: 'Enhanced Demo', 
+      path: '/enhanced',
+      ritual: {
+        name: 'Architect\'s Vision',
+        description: 'Access the enhanced lore experience',
+        requirement: 'Master the previous chambers',
+        steps: 5
+      }
     }
   ];
 

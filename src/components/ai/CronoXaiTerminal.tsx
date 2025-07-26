@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Send, Sun, Moon, Zap, Clock, Brain } from 'lucide-react';
 import { useCronoXaiMemory } from '../../hooks/useCronoXaiMemory';
+import { useTypewriter, useMysticalTypewriter } from '../../utils/typewriter';
 
 interface TerminalMessage {
   id: string;

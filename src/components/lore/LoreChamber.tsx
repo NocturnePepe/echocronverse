@@ -68,7 +68,7 @@ const LoreChamber: React.FC<LoreChamberProps> = ({
     if (!isExpanded && !hasBeenRead) {
       // Record that this lore chamber has been accessed
       addMemory({
-        type: 'lore_access',
+        type: 'memory',
         content: `Accessed Lore Chamber: ${title}`,
         context: { 
           chamberId: id,
@@ -84,7 +84,7 @@ const LoreChamber: React.FC<LoreChamberProps> = ({
       setHasBeenRead(true);
       // Record lore completion for memory system
       addMemory({
-        type: 'lore_completion',
+        type: 'ritual',
         content: `Completed reading: ${title} - ${description}`,
         context: {
           chamberId: id,
