@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Wallet, Link, Unlink, Copy, ExternalLink, Shield, Zap, ChevronDown } from 'lucide-react';
+import { Wallet, Link, Unlink, Copy, Shield, Zap, ChevronDown } from 'lucide-react';
 
 interface WalletOption {
   id: string;
