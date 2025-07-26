@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Echocronverse - Mystical Web3 Universe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A dark, cult-themed Web3 landing site featuring EchoDex, CronoXai Terminal, and mystical Web3 experiences.
+
+## 🔮 Project Status: Phase 2 Complete - Stable Build
+
+This project is built with Vite + React + TypeScript for optimal performance.
 
 ## Available Scripts
 
