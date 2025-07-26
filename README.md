@@ -1,6 +1,17 @@
 # Echocronverse - Mystical Web3 Universe
 
-A dark, cult-themed Web3 landing site featuring EchoDex, CronoXai Terminal, and mystical Web3 experiences built with Vite + React + TypeScript.
+A dark, cult-themed Web3 landing sit### **New Production Features**
+- 🎭 **Enhanced Atmosphere**: Subtle particle effects on all pages for immersive experience
+- 📚 **Lore Archives**: `/lore` - Interactive lore chambers with memory-based progression  
+- ⚡ **Mystical Framing**: Production components enhanced with FrameRunes integration
+- 🌊 **Atmospheric Effects**: Page-specific particle systems (ambient, mystical, intense)
+- 📝 **Enhanced Typewriter**: Improved text animations throughout the application
+
+### **Production Architecture**
+- 🏗️ **Component Integration**: All new components seamlessly integrated into existing pages
+- 🎯 **Memory-Driven UX**: Progressive content unlocking based on user interactions
+- 🎨 **Consistent Theming**: Tier-based visual effects maintaining cosmic cult aesthetic
+- ⚡ **Performance Optimized**: Efficient particle systems and animation managementaturing EchoDex, CronoXai Terminal, and mystical Web3 experiences built with Vite + React + TypeScript.
 
 ---
 
