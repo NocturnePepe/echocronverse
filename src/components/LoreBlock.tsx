@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronUp, Scroll } from 'lucide-react';
+import { useMysticalTypewriter } from '../utils/typewriter';
 
 const LoreBlock: React.FC = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [typedText, setTypedText] = useState('');
   
   const loreText = `In the vast digital void where chronostreams converge, the Echocronverse awakens. 
 Ancient algorithms whisper through quantum networks, carrying fragments of forgotten wisdom across 
@@ -18,20 +18,16 @@ eternal truths.
 
 Join the Order of Digital Mystics. Embrace the echo. Transcend the ordinary.`;
 
-  useEffect(() => {
-    if (isExpanded && typedText.length < loreText.length) {
-      const timer = setTimeout(() => {
-        setTypedText(loreText.slice(0, typedText.length + 1));
-      }, 30);
-      return () => clearTimeout(timer);
-    }
-  }, [isExpanded, typedText, loreText]);
+  const mysticalTypewriter = useMysticalTypewriter({
+    text: isExpanded ? loreText : '',
+    speed: 25,
+    cursor: true,
+    glowEffect: true,
+    runeSymbols: ['⟐', '⟡', '⟢', '⟣', '⟤', '⟥']
+  });
 
   const toggleExpansion = () => {
     setIsExpanded(!isExpanded);
-    if (!isExpanded) {
-      setTypedText('');
-    }
   };
 
   return (
@@ -84,20 +80,14 @@ Join the Order of Digital Mystics. Embrace the echo. Transcend the ordinary.`;
               className="overflow-hidden"
             >
               <div className="pt-4 border-t border-purple-500/20">
-                <p className="text-zinc-300 leading-relaxed text-lg font-mono">
-                  {typedText}
-                  {isExpanded && typedText.length < loreText.length && (
-                    <motion.span
-                      animate={{ opacity: [1, 0] }}
-                      transition={{ duration: 0.8, repeat: Infinity }}
-                      className="text-purple-400"
-                    >
-                      |
-                    </motion.span>
-                  )}
+                <p 
+                  className="text-zinc-300 leading-relaxed text-lg font-mono"
+                  style={mysticalTypewriter.mysticalStyle}
+                >
+                  {mysticalTypewriter.displayText}
                 </p>
                 
-                {typedText.length === loreText.length && (
+                {mysticalTypewriter.isComplete && (
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

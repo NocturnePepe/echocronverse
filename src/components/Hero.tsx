@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import FrameRunes from './runes/FrameRunes';
 
 const Hero: React.FC = () => {
   return (
