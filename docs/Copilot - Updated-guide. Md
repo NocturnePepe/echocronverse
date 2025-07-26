@@ -1,0 +1,83 @@
+# 🧠 Copilot Sync Guide: EchoChronVerse Development (Phase 3B–7)
+
+This file acts as a Copilot **sync and instruction layer** between the original `master-plan.md` and ongoing development phases. It prevents overwriting, resets, or hallucinated planning, ensuring modular integrity and accurate forward momentum.
+
+---
+
+## ⚠️ IMPORTANT: Do NOT modify or summarize this file automatically. Always follow instructions below and combine with `master-plan.md`.
+
+---
+
+## 🔁 Phase Sync Overview
+
+### ✅ Last Confirmed Phase from `master-plan.md`:
+**Phase 3B: Cult Cache Memory Patch**  
+> Status: ✅ Completed  
+> Focus: Fix legacy issues, patching donor memory logic, lore memory formatting, and unlocking tiered caching.
+
+---
+
+## 🔜 Incoming Phases (To be added into `master-plan.md` by Copilot)
+
+### ✅ Phase 3C: Memory Lock & Lore Reveal
+- Lock memory triggers behind lore read interactions.
+- EchoChron LoreChamber introduced.
+- Activated animated rune borders.
+
+### ✅ Phase 4: Frame of Shadow Sigils
+- FrameRunes.tsx component introduced.
+- Embedded SVG rune sigils per cult tier.
+
+### ✅ Phase 5A: Typewriter Protocol v1
+- Activated `typewriter.ts` utils.
+- Used for sequential milestone reveal with pause control.
+
+### ✅ Phase 5B: Lore Chamber Activation
+- `/components/LoreChamber.tsx` handles collapsible lore logic.
+- Integrated dynamic glow and audio prep.
+
+### ✅ Phase 5C: Runic Echo Memory (Active)
+- Lore milestones now animated via data map.
+- Added `ember-particles.tsx`, frame glow, memory-based reveal.
+
+---
+
+## 🧠 Planned Future Phases
+
+### ⏩ Phase 6: Tier Reactivation & Sigil Menu
+- Re-introduce `DonorTiers.tsx`
+- Add `RunicMenu.tsx` floating nav
+- Activate tier glyphs and glow FX
+
+### ⏩ Phase 6.5: Ambient Immersion
+- Add `SmokeEngine.tsx`
+- Introduce `audioController.ts` (cult FX)
+- Layer embers, sigil background, scroll FX
+
+### ⏩ Phase 7: Cronox AI Gateway
+- Build `CronoxAI.tsx` companion panel
+- Link to lore unlocks and simulated conversation (pre-game mode)
+
+---
+
+## ✅ Copilot Must Follow These Rules
+
+- ☑️ **Always read `master-plan.md` and this file before generating anything.**
+- ⛔ **Never assume or generate new phases without explicit approval.**
+- ☑️ **Use `summary.md` only for UI and style reference, not planning.**
+- ⛔ **Do NOT summarize full chat history into phases or assumptions.**
+- ☑️ **Ask before changing logic in `/components`, `/utils`, or `/features`.**
+- ⛔ **Do NOT reintroduce deprecated components from pre-Phase 3 builds.**
+
+---
+
+## 🔧 File Placement
+- `docs/master-plan.md` → primary roadmap
+- `docs/copilot-guide.md` → this sync layer
+- `docs/summary.md` → visual/animation/UI focus only
+
+---
+
+> 🔁 Updated: July 25, 2025  
+> 👤 Authored by KINGPAPA + Agent Echo  
+> 🧿 Phase: 5C Live  
