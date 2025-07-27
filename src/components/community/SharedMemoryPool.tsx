@@ -24,7 +24,6 @@ export const SharedMemoryPool: React.FC<SharedMemoryPoolProps> = ({ className = 
   const { address } = useAccount();
   const { 
     currentMember, 
-    sharedMemories, 
     memoryPool, 
     addSharedMemory, 
     likeMemory, 

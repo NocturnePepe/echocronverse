@@ -22,7 +22,6 @@ interface CollaborativeRitualsProps {
 }
 
 export const CollaborativeRituals: React.FC<CollaborativeRitualsProps> = ({ className = '' }) => {
-  const { address } = useAccount();
   const { 
     currentMember, 
     activeRituals, 

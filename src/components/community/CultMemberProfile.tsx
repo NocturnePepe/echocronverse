@@ -42,7 +42,7 @@ export const CultMemberProfile: React.FC<CultMemberProfileProps> = ({
   const handleStartEdit = () => {
     setEditForm({
       displayName: member.displayName,
-      favorite_rune_set: member.favorite_rune_set,
+      favorite_rune_set: 'ancient' as const,
     });
     setIsEditing(true);
   };
