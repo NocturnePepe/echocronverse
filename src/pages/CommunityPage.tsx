@@ -13,12 +13,7 @@ import {
   Crown,
   Heart
 } from 'lucide-react';
-import { FrameRunes } from '..              <div className="flex items-center gap-4">
-                <FrameRunes tier="oracle" runeSet="ancient" className="w-12 h-12">
-                  <div className="flex items-center justify-center h-full">
-                    <Users className="w-6 h-6 text-purple-400" />
-                  </div>
-                </FrameRunes>nents/runes';
+import { FrameRunes } from '../components/runes';
 import { EmberParticles } from '../components/ui';
 import { 
   CultMemberProfile, 
@@ -38,7 +33,6 @@ const CommunityPage: React.FC = () => {
     initializeMember, 
     leaderboards, 
     sharedMemories, 
-    activeRituals, 
     upcomingRituals,
     notifications,
     updateLeaderboards 
