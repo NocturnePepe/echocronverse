@@ -1,30 +1,52 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import ErrorBoundary from './components/ui/ErrorBoundary';
 import { NavigationProvider } from './stores/navigationStore';
 import { CronoXaiMemoryProvider } from './hooks/useCronoXaiMemory';
 import Nav from './components/Nav';
-import HomePage from './pages/HomePage';
-import EchoDexPage from './pages/EchoDexPage';
-import CronoXaiPage from './pages/CronoXaiPage';
-import WalletPage from './pages/WalletPage';
-import CultLorePage from './pages/CultLorePage';
+import { initAnalytics, logPageView } from './utils/analytics';
+
+// Lazy-loaded pages for code-splitting
+const HomePage = lazy(() => import('./pages/HomePage'));
+const EchoDexPage = lazy(() => import('./pages/EchoDexPage'));
+const CronoXaiPage = lazy(() => import('./pages/CronoXaiPage'));
+const WalletPage = lazy(() => import('./pages/WalletPage'));
+const CultLorePage = lazy(() => import('./pages/CultLorePage'));
+
+function AppContent() {
+  const location = useLocation();
+  useEffect(() => {
+    logPageView(location.pathname);
+  }, [location]);
+  return (
+    <div className="App bg-black min-h-screen">
+      <Nav />
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/echodex" element={<EchoDexPage />} />
+          <Route path="/cronoxai" element={<CronoXaiPage />} />
+          <Route path="/wallet" element={<WalletPage />} />
+          <Route path="/lore" element={<CultLorePage />} />
+        </Routes>
+      </main>
+    </div>
+  );
+}
 
 function App() {
+  useEffect(() => {
+    initAnalytics();
+  }, []);
   return (
     <CronoXaiMemoryProvider>
       <NavigationProvider>
         <Router>
-          <div className="App bg-black min-h-screen">
-            <Nav />
-            <main>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/echodex" element={<EchoDexPage />} />
-                <Route path="/cronoxai" element={<CronoXaiPage />} />
-                <Route path="/wallet" element={<WalletPage />} />
-                <Route path="/lore" element={<CultLorePage />} />
-              </Routes>
-            </main>
-          </div>
+          <ErrorBoundary>
+            <Suspense fallback={<div className="text-center text-white p-6">Loading...</div>}>
+              <AppContent />
+            </Suspense>
+          </ErrorBoundary>
         </Router>
       </NavigationProvider>
     </CronoXaiMemoryProvider>

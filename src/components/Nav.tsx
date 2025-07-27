@@ -4,11 +4,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { Lock } from 'lucide-react';
 import { useNavigationStore } from '../stores/navigationStore';
 import RitualUnlock from './RitualUnlock';
+import { AchievementBadge } from './ui';
+import { useCultCalendar } from '../hooks/useCultCalendar';
 
 const Nav: React.FC = () => {
   const location = useLocation();
   const { isPathUnlocked } = useNavigationStore();
   const [showRitual, setShowRitual] = useState<string | null>(null);
+  const calendar = useCultCalendar();
   
   const navItems = [
     { name: 'Echocronverse', path: '/' },
@@ -70,7 +73,20 @@ const Nav: React.FC = () => {
         className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-zinc-800"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center items-center h-16">
+          <div className="flex justify-between items-center h-16">
+            {/* Seasonal indicator */}
+            <div className="flex items-center gap-3">
+              <div className="text-xs text-purple-400 font-medium">
+                {calendar.currentSeason.toUpperCase()} SEASON
+              </div>
+              {calendar.specialEvents.length > 0 && (
+                <div className="text-xs text-yellow-400 animate-pulse">
+                  ⚡ {calendar.specialEvents[0].name}
+                </div>
+              )}
+            </div>
+            
+            {/* Navigation items */}
             <div className="flex space-x-8">
               {navItems.map((item, index) => {
                 const isActive = location.pathname === item.path;
@@ -115,6 +131,11 @@ const Nav: React.FC = () => {
                   </motion.div>
                 );
               })}
+            </div>
+            
+            {/* Achievement Badge */}
+            <div className="relative">
+              <AchievementBadge />
             </div>
           </div>
         </div>
