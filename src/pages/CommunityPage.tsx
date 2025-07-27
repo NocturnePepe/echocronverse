@@ -10,11 +10,15 @@ import {
   Menu,
   X,
   Star,
-  TrendingUp,
   Crown,
   Heart
 } from 'lucide-react';
-import { FrameRunes } from '../components/runes';
+import { FrameRunes } from '..              <div className="flex items-center gap-4">
+                <FrameRunes tier="oracle" runeSet="ancient" className="w-12 h-12">
+                  <div className="flex items-center justify-center h-full">
+                    <Users className="w-6 h-6 text-purple-400" />
+                  </div>
+                </FrameRunes>nents/runes';
 import { EmberParticles } from '../components/ui';
 import { 
   CultMemberProfile, 
@@ -284,7 +288,7 @@ const CommunityPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-indigo-900/20 to-black">
-      <EmberParticles variant="cosmic" />
+      <EmberParticles variant="mystical" />
       
       <div className="relative z-10">
         {/* Header */}
@@ -292,7 +296,7 @@ const CommunityPage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <FrameRunes tier="oracle" runeSet="cosmic" className="w-12 h-12">
+                <FrameRunes tier="oracle" runeSet="ancient" className="w-12 h-12">
                   <div className="flex items-center justify-center h-full">
                     <Users className="w-6 h-6 text-purple-400" />
                   </div>

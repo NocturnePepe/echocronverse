@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Zap, 
   Users, 
   Calendar, 
   Clock, 
-  Star, 
-  Trophy,
   Plus,
   UserPlus,
   Eye,
-  Settings,
   Play,
   CheckCircle,
-  XCircle,
-  AlertCircle
+  XCircle
 } from 'lucide-react';
 import { FrameRunes } from '../runes';
 import { EmberParticles } from '../ui';
@@ -33,8 +29,7 @@ export const CollaborativeRituals: React.FC<CollaborativeRitualsProps> = ({ clas
     upcomingRituals, 
     completedRituals,
     createRitual, 
-    joinRitual, 
-    completeRitual 
+    joinRitual
   } = useCommunityStore();
   
   const [activeTab, setActiveTab] = useState<'upcoming' | 'active' | 'completed'>('upcoming');
@@ -66,11 +61,6 @@ export const CollaborativeRituals: React.FC<CollaborativeRitualsProps> = ({ clas
     { value: 'adept', label: 'Adept', color: 'green' },
     { value: 'master', label: 'Master', color: 'blue' },
     { value: 'oracle', label: 'Oracle', color: 'purple' }
-  ];
-
-  const achievementOptions = [
-    'memory_keeper', 'ritual_master', 'sigil_creator', 'mystic_scholar', 
-    'communion_seeker', 'temporal_navigator', 'cosmic_wanderer', 'shadow_walker'
   ];
 
   const handleCreateRitual = () => {
@@ -203,7 +193,7 @@ export const CollaborativeRituals: React.FC<CollaborativeRitualsProps> = ({ clas
 
   return (
     <div className={`min-h-screen bg-gradient-to-br from-black via-blue-900/20 to-black p-6 relative ${className}`}>
-      <EmberParticles variant="cosmic" />
+      <EmberParticles variant="mystical" />
       
       <div className="max-w-6xl mx-auto relative z-10">
         <FrameRunes tier="master" runeSet="cosmic" className="mb-8">

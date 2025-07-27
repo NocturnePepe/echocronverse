@@ -9,12 +9,11 @@ import {
   Award,
   TrendingUp,
   Calendar,
-  Target,
   Eye
 } from 'lucide-react';
 import { FrameRunes } from '../runes';
 import { EmberParticles } from '../ui';
-import { useCommunityStore, LeaderboardEntry } from '../../stores/communityStore';
+import { useCommunityStore } from '../../stores/communityStore';
 import { CultMemberProfile } from './CultMemberProfile';
 
 interface LeaderboardProps {
@@ -77,7 +76,7 @@ export const Leaderboard: React.FC<LeaderboardProps> = ({ className = '' }) => {
 
   return (
     <div className={`min-h-screen bg-gradient-to-br from-black via-indigo-900/20 to-black p-6 relative ${className}`}>
-      <EmberParticles variant="cosmic" />
+      <EmberParticles variant="mystical" />
       
       <div className="max-w-6xl mx-auto relative z-10">
         <FrameRunes tier="master" runeSet="cosmic" className="mb-8">

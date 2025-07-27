@@ -5,15 +5,11 @@ import {
   Heart, 
   Share2, 
   Send, 
-  Eye, 
-  Filter,
   Search,
   Clock,
   TrendingUp,
   Sparkles,
-  User,
-  Reply,
-  Hash
+  Reply
 } from 'lucide-react';
 import { FrameRunes } from '../runes';
 import { EmberParticles } from '../ui';

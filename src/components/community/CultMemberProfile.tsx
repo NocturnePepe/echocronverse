@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
-  User, 
   Trophy, 
   Star, 
-  Calendar, 
   Award, 
-  Zap, 
   Users, 
-  Eye,
   Edit3,
   Save,
   X
@@ -30,7 +26,7 @@ export const CultMemberProfile: React.FC<CultMemberProfileProps> = ({
   onClose
 }) => {
   const { address } = useAccount();
-  const { currentMember, updateMemberStats, followMember, unfollowMember, following } = useCommunityStore();
+  const { currentMember, followMember, unfollowMember, following } = useCommunityStore();
   const [isEditing, setIsEditing] = useState(false);
   const [editForm, setEditForm] = useState({
     displayName: '',
@@ -114,7 +110,7 @@ export const CultMemberProfile: React.FC<CultMemberProfileProps> = ({
       <EmberParticles variant="mystical" />
       
       <div className="max-w-4xl mx-auto relative z-10">
-        <FrameRunes tier={member.currentTier} runeSet={member.favorite_rune_set} className="mb-6">
+        <FrameRunes tier="master" runeSet="ancient" className="mb-6">
           <div className="p-8">
             {/* Header */}
             <div className="flex justify-between items-start mb-6">
