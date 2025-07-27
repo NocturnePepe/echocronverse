@@ -15,7 +15,6 @@ import {
 import { FrameRunes } from '../runes';
 import { EmberParticles } from '../ui';
 import { useCommunityStore, CollaborativeRitual } from '../../stores/communityStore';
-import { useAccount } from 'wagmi';
 
 interface CollaborativeRitualsProps {
   className?: string;
