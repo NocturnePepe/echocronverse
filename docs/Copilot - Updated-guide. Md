@@ -1,6 +1,33 @@
-# 🧠 Copilot Sync Guide: EchoChronVerse Development (Phase 3B–7)
+# 🧠 Copilot Sync Guide: EchoChronVerse Development
 
-This file acts as a Copilot **sync and instruction layer** between the original `master-plan.md` and ongoing development phases. It prevents overwriting, resets, or hallucinated planning, ensuring modular integrity and accurate forward momentum.
+> **AI CACHE CONTROL CENTER** - Read this first before any development session
+
+---
+
+## 🚨 **CRITICAL: AI AGENT RESET PROTOCOL**
+
+### 📋 **Cache Alignment Rules (ALL AI AGENTS)**
+
+#### ⚡ **Before Starting Any Session:**
+- ☑️ **Always sync with echocronverse-master-plan.md before continuing development**
+- ☑️ **When reaching new phases (6+), erase cache history older than 3 phases while keeping memory of:**
+  - Component definitions in `/src/components`
+  - Completed logic layers in `/utils` 
+  - Unused/paused features for future reference
+- ⛔ **DO NOT backtrack to old styling or deprecated systems unless explicitly requested**
+- ☑️ **Use echocronverse-master-plan.md to verify current scope, not chat history**
+
+#### 🔄 **Cache Misalignment Detection:**
+If you detect inconsistencies between chat history and master plan:
+1. **DISCARD** chat-based assumptions prior to Phase 3
+2. **RELOAD** from `/docs/echocronverse-master-plan.md`
+3. **VERIFY** component status in actual codebase
+4. **PROCEED** according to defined phases only
+
+#### 🧠 **Memory Retention Guidelines:**
+- **KEEP**: Core component architecture, utility functions, dark-cult cosmic UI logic
+- **KEEP**: Phases marked ✅ VERIFIED in master-plan.md
+- **DISCARD**: Chat summaries, assumed progress, deprecated phase logic
 
 ---
 
