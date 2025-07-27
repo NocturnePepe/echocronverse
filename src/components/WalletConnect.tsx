@@ -6,6 +6,8 @@ import { Shield, Copy, ExternalLink, Wallet } from 'lucide-react';
 import { FrameRunes } from './runes';
 import { EmberParticles } from './ui';
 
+// Phase 6.3 Web3 Foundation - Wallet Connection Portal
+
 const WalletConnect: React.FC = () => {
   const { address, isConnected, chain } = useAccount();
   const { data: balance } = useBalance({
