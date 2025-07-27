@@ -27,7 +27,7 @@ const WalletConnect: React.FC = () => {
       <EmberParticles variant="mystical" />
       
       <div className="max-w-4xl mx-auto relative z-10">
-        <FrameRunes tier="master" runeSet="shadow" className="mb-8">
+        <FrameRunes tier="master" theme="shadow" className="mb-8">
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}

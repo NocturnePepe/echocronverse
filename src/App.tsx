@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import ErrorBoundary from './components/ui/ErrorBoundary';
 import { NavigationProvider } from './stores/navigationStore';
 import { CronoXaiMemoryProvider } from './hooks/useCronoXaiMemory';
+import { Web3Provider } from './context/Web3Context';
 import Nav from './components/Nav';
 import { initAnalytics, logPageView } from './utils/analytics';
 
@@ -39,17 +40,19 @@ function App() {
     initAnalytics();
   }, []);
   return (
-    <CronoXaiMemoryProvider>
-      <NavigationProvider>
-        <Router>
-          <ErrorBoundary>
-            <Suspense fallback={<div className="text-center text-white p-6">Loading...</div>}>
-              <AppContent />
-            </Suspense>
-          </ErrorBoundary>
-        </Router>
-      </NavigationProvider>
-    </CronoXaiMemoryProvider>
+    <Web3Provider>
+      <CronoXaiMemoryProvider>
+        <NavigationProvider>
+          <Router>
+            <ErrorBoundary>
+              <Suspense fallback={<div className="text-center text-white p-6">Loading...</div>}>
+                <AppContent />
+              </Suspense>
+            </ErrorBoundary>
+          </Router>
+        </NavigationProvider>
+      </CronoXaiMemoryProvider>
+    </Web3Provider>
   );
 }
 
