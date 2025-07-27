@@ -54,6 +54,16 @@ const Nav: React.FC = () => {
         requirement: 'Accumulate temporal memories through interaction',
         steps: 3
       }
+    },
+    { 
+      name: 'Community', 
+      path: '/community',
+      ritual: {
+        name: 'Cult Assembly',
+        description: 'Join the collective consciousness of the EchoCronVerse',
+        requirement: 'Connect to the Web3 nexus',
+        steps: 1
+      }
     }
   ];
 

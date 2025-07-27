@@ -13,6 +13,7 @@ const EchoDexPage = lazy(() => import('./pages/EchoDexPage'));
 const CronoXaiPage = lazy(() => import('./pages/CronoXaiPage'));
 const WalletPage = lazy(() => import('./pages/WalletPage'));
 const CultLorePage = lazy(() => import('./pages/CultLorePage'));
+const CommunityPage = lazy(() => import('./pages/CommunityPage'));
 
 function AppContent() {
   const location = useLocation();
@@ -29,6 +30,7 @@ function AppContent() {
           <Route path="/cronoxai" element={<CronoXaiPage />} />
           <Route path="/wallet" element={<WalletPage />} />
           <Route path="/lore" element={<CultLorePage />} />
+          <Route path="/community" element={<CommunityPage />} />
         </Routes>
       </main>
     </div>

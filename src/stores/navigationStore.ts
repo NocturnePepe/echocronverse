@@ -99,5 +99,11 @@ export const RITUAL_REQUIREMENTS = {
     description: 'Prove worthy of cosmic vault access', 
     requirement: 'Trace the mystical sigils',
     steps: 5
+  },
+  '/community': {
+    name: 'Cult Assembly',
+    description: 'Join the collective consciousness of the EchoCronVerse',
+    requirement: 'Connect to the Web3 nexus',
+    steps: 1
   }
 };

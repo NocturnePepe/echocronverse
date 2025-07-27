@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount, useBalance } from 'wagmi';
 import { Shield, Copy, ExternalLink, Wallet } from 'lucide-react';
 import { FrameRunes } from './runes';
 import { EmberParticles } from './ui';
+import { useNavigationStore } from '../stores/navigationStore';
 
 // Phase 6.3 Web3 Foundation - Wallet Connection Portal
 
@@ -13,6 +14,14 @@ const WalletConnect: React.FC = () => {
   const { data: balance } = useBalance({
     address: address,
   });
+  const { unlockPath } = useNavigationStore();
+
+  // Unlock community path when wallet connects
+  useEffect(() => {
+    if (isConnected && address) {
+      unlockPath('/community');
+    }
+  }, [isConnected, address, unlockPath]);
 
   const copyAddress = () => {
     if (address) {
