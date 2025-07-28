@@ -13,8 +13,8 @@
  */
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { aiLogBus, AiLogEntry, AiSystemMetrics } from '../../../ai/phase6x/aiLogBus';
-import { runeGate, checkAIStatus, activateDevAI, emergencyAIActivation, deactivateAI } from '../../../ai/phase6x/runeGate';
+import { aiLogBus, AiLogEntry, AiSystemMetrics } from '../../ai/phase6x/aiLogBus';
+import { checkAIStatus, activateDevAI, emergencyAIActivation, deactivateAI } from '../../ai/phase6x/runeGate';
 
 interface AiDashboardProps {
   className?: string;
@@ -49,7 +49,6 @@ export const AiDashboard: React.FC<AiDashboardProps> = ({
     emergencyMode: false
   });
 
-  const [subscriptionId, setSubscriptionId] = useState<string | null>(null);
   const [showEmergencyPanel, setShowEmergencyPanel] = useState(false);
   const [devPassword, setDevPassword] = useState('');
   const [emergencyCode, setEmergencyCode] = useState('');
@@ -96,14 +95,12 @@ export const AiDashboard: React.FC<AiDashboardProps> = ({
     refreshDashboardData();
 
     // Subscribe to live events
-    const subId = aiLogBus.subscribe((event) => {
+    const subId = aiLogBus.subscribe((event: AiLogEntry) => {
       setState(prev => ({
         ...prev,
         recentEvents: [event, ...prev.recentEvents].slice(0, 100)
       }));
     });
-
-    setSubscriptionId(subId);
 
     // Auto-refresh timer
     let refreshInterval: NodeJS.Timeout | null = null;

@@ -132,9 +132,6 @@ class SentinelGuard {
   }
 
   private monitorRageClicking(): void {
-    // Variables for legacy compatibility - kept for potential future use
-    let _clickCount = 0;
-    let _lastClickTime = 0;
     let clickTimestamps: number[] = [];
     
     document.addEventListener('click', (event) => {
