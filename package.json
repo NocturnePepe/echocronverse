@@ -37,6 +37,8 @@
     "mesh:status": "node scripts/mesh-status.js",
     "mesh:invoke": "node scripts/invoke-mesh-consciousness.js",
     "mesh:validate": "node scripts/meshAgent-validate.js",
-    "mesh:config": "cat .copilot-mesh-config.json 2>/dev/null || echo 'Copilot config not found'"
+    "mesh:config": "cat .copilot-mesh-config.json 2>/dev/null || echo 'Copilot config not found'",
+    "mesh:autorecovery": "node scripts/echomesh-autorecovery.js",
+    "restart:mesh": "npm run mesh:autorecovery || npm run mesh:start"
   }
 }

@@ -10,7 +10,9 @@
     "gemini"
   ],
   "phaseLevel": "7.5",
-  "lastSync": "2025-07-29T09:58:51.724Z",
+  "lastSync": "2025-07-29T10:19:08.880Z",
   "observerChain": true,
-  "copilotReady": true
+  "copilotReady": true,
+  "shadowObserver": true,
+  "spiritGuardians": true
 }

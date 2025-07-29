@@ -50,9 +50,9 @@
     }
   },
   
-  "postCreateCommand": "npm install && chmod +x scripts/meshAgent.js && chmod +x scripts/meshAgent-quick.js",
+  "postCreateCommand": "npm install && chmod +x scripts/meshAgent.js && chmod +x scripts/meshAgent-quick.js && chmod +x scripts/echomesh-autorecovery.js",
   
-  "postStartCommand": "node scripts/meshAgent-quick.js",
+  "postStartCommand": "npm run mesh:autorecovery",
   
   "mounts": [
     "source=echocronverse-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
