@@ -1,0 +1,71 @@
+{
+  "name": "EchoCronVerse - Phase 7.5 Mesh Development",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-json",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "ms-vscode.vscode-eslint"
+      ],
+      "settings": {
+        "typescript.preferences.preferTypeOnlyAutoImports": true,
+        "typescript.suggest.autoImports": true,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "tailwindCSS.experimental.classRegex": [
+          ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+          ["classnames\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+          ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+        ]
+      }
+    }
+  },
+  
+  "forwardPorts": [3000, 5173, 8545],
+  "portsAttributes": {
+    "3000": {
+      "label": "EchoCronVerse App",
+      "onAutoForward": "notify"
+    },
+    "5173": {
+      "label": "Vite Dev Server", 
+      "onAutoForward": "notify"
+    },
+    "8545": {
+      "label": "Local Blockchain",
+      "onAutoForward": "silent"
+    }
+  },
+  
+  "postCreateCommand": "npm install && chmod +x scripts/meshAgent.js && chmod +x scripts/meshAgent-quick.js",
+  
+  "postStartCommand": "node scripts/meshAgent-quick.js",
+  
+  "mounts": [
+    "source=echocronverse-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
+  
+  "remoteUser": "node",
+  
+  "containerEnv": {
+    "ECHOMESH_PHASE": "7.5",
+    "MESH_AUTO_SYNC": "true",
+    "COPILOT_AGENT_MODE": "echomesh",
+    "MESH_DAEMON": "false",
+    "PHASE_LEVEL": "7.5_contest_framework",
+    "TRANSCENDENCE_LEVEL": "7.5"
+  }
+}
