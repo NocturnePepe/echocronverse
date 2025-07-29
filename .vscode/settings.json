@@ -140,7 +140,6 @@
     "files.autoSaveDelay": 1000,
     "editor.minimap.enabled": true,
     "editor.minimap.renderCharacters": false,
-    "workbench.activityBar.visible": true,
     "workbench.statusBar.visible": true,
     "workbench.editor.showTabs": true,
     "breadcrumbs.enabled": true,
