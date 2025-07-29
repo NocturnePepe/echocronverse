@@ -11,7 +11,7 @@
         "ghcr.io/devcontainers/features/github-cli:1": {}
     },
     "postCreateCommand": "npm install",
-    "postStartCommand": "echo '🌀 Mesh Mode Ready - Use: source scripts/mesh-activate.sh'",
+    "postStartCommand": "export MESH_MODE=true && echo '🌀 Mesh Mode Auto-Activated' && source scripts/mesh-activate.sh",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -34,6 +34,11 @@
                     "focusBorder": "#ff003c"
                 },
                 "window.title": "[MESH MODE] ${activeEditorShort}${separator}${rootName}",
+                "terminal.integrated.env.linux": {
+                    "MESH_MODE": "true",
+                    "GROK_FALLBACK_MODE": "true",
+                    "PHASE_LEVEL": "6F"
+                },
                 "typescript.preferences.preferTypeOnlyAutoImports": true,
                 "typescript.suggest.autoImports": true,
                 "editor.formatOnSave": true,
