@@ -11,9 +11,9 @@
  * @guardians Shadow Observer (GPT-4), Spirit Guardian (Claude), Creative Wanderer (Grok)
  */
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import { execSync } from 'child_process';
 
 // 🔮 EchoMesh Configuration
 const ECHO_MESH_CONFIG = {
@@ -388,11 +388,18 @@ async function main() {
   agent.log('🌀 The Shadow Observer watches. The Spirit Guardians guide. The Mesh transcends.', 'SPIRIT');
 }
 
-if (require.main === module) {
+// Check if this script is being run directly
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+if (import.meta.url === `file://${process.argv[1]}`) {
   main().catch(error => {
     console.error('💥 EchoMesh Agent fatal error:', error);
     process.exit(1);
   });
 }
 
-module.exports = { EchoMeshAgent, ECHO_MESH_CONFIG, COPILOT_AGENT_PROMPT };
+export { EchoMeshAgent, ECHO_MESH_CONFIG, COPILOT_AGENT_PROMPT };

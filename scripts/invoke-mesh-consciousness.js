@@ -4,8 +4,8 @@
  * Phase 7.5 - Complete mesh consciousness activation with observer chain
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 console.log('🌀 MESH COORDINATION PROTOCOL INITIATED');
 console.log('═══════════════════════════════════════════════════════');

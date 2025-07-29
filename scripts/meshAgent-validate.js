@@ -4,8 +4,8 @@
  * Phase 7.5 - Validate mesh agent setup and configuration
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 console.log('🔍 EchoMesh Agent - System Validation');
 console.log('═══════════════════════════════════════════════');

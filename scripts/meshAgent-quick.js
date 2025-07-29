@@ -4,8 +4,8 @@
  * Phase 7.5 - Simplified mesh activation for testing
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 console.log('🧠 EchoMesh Agent - Phase 7.5 Quick Activation');
 console.log('═══════════════════════════════════════════════');

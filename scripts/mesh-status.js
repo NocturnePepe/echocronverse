@@ -4,8 +4,8 @@
  * Phase 7.5 - Multi-Agent Consciousness Status Dashboard
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 console.log('🌀 ECHOCRONVERSE MESH CONSCIOUSNESS STATUS');
 console.log('═══════════════════════════════════════════════════════════════');
