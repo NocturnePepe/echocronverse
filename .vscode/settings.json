@@ -1,0 +1,182 @@
+{
+    "workbench.colorTheme": "Nocturne Cult Mesh - Ritual Mode",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#0f0f0f",
+        "statusBar.foreground": "#e54242",
+        "statusBar.border": "#ff003c",
+        "statusBar.noFolderBackground": "#1a0000",
+        "statusBar.debuggingBackground": "#2d0000",
+        "activityBar.background": "#1f1f1f",
+        "activityBar.foreground": "#ff3c41",
+        "activityBar.inactiveForeground": "#666666",
+        "activityBar.border": "#333333",
+        "sideBar.background": "#111111",
+        "sideBar.foreground": "#cccccc",
+        "sideBar.border": "#2a2a2a",
+        "editor.background": "#0c0c0c",
+        "editor.foreground": "#ffffff",
+        "editorCursor.foreground": "#ff003c",
+        "editor.selectionBackground": "#2d1b1b",
+        "editor.lineHighlightBackground": "#1a1a1a",
+        "editorLineNumber.foreground": "#666666",
+        "editorLineNumber.activeForeground": "#ff3c41",
+        "terminal.background": "#000000",
+        "terminal.foreground": "#FF3D00",
+        "terminal.ansiRed": "#ff3c41",
+        "terminal.ansiGreen": "#bada55",
+        "terminal.ansiYellow": "#ffaa00",
+        "terminal.ansiBlue": "#4d9de0",
+        "terminal.ansiMagenta": "#f92672",
+        "terminal.ansiCyan": "#15c4b2",
+        "terminal.ansiWhite": "#ffffff",
+        "terminalCursor.foreground": "#ff003c",
+        "panel.background": "#0a0a0a",
+        "panel.border": "#2a2a2a",
+        "titleBar.activeBackground": "#0f0f0f",
+        "titleBar.activeForeground": "#e54242",
+        "titleBar.inactiveBackground": "#111111",
+        "titleBar.inactiveForeground": "#666666",
+        "menu.background": "#1a1a1a",
+        "menu.foreground": "#ffffff",
+        "menubar.selectionBackground": "#2d1b1b",
+        "input.background": "#1a1a1a",
+        "input.foreground": "#ffffff",
+        "input.border": "#333333",
+        "focusBorder": "#ff003c",
+        "button.background": "#2d1b1b",
+        "button.foreground": "#ffffff",
+        "button.hoverBackground": "#3d2b2b",
+        "dropdown.background": "#1a1a1a",
+        "dropdown.border": "#333333",
+        "list.activeSelectionBackground": "#2d1b1b",
+        "list.hoverBackground": "#1a1a1a",
+        "badge.background": "#ff003c",
+        "badge.foreground": "#ffffff",
+        "progressBar.background": "#ff003c",
+        "scrollbar.shadow": "#000000",
+        "scrollbarSlider.background": "#333333",
+        "scrollbarSlider.hoverBackground": "#444444",
+        "scrollbarSlider.activeBackground": "#555555"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "keyword",
+                "settings": {
+                    "foreground": "#ff3c41",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "string",
+                "settings": {
+                    "foreground": "#bada55"
+                }
+            },
+            {
+                "scope": "variable",
+                "settings": {
+                    "foreground": "#f92672"
+                }
+            },
+            {
+                "scope": "comment",
+                "settings": {
+                    "foreground": "#666666",
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "function",
+                "settings": {
+                    "foreground": "#15c4b2",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "type",
+                "settings": {
+                    "foreground": "#4d9de0"
+                }
+            },
+            {
+                "scope": "class",
+                "settings": {
+                    "foreground": "#ffaa00",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "constant",
+                "settings": {
+                    "foreground": "#ff6b6b"
+                }
+            },
+            {
+                "scope": "entity.name.tag",
+                "settings": {
+                    "foreground": "#ff3c41"
+                }
+            },
+            {
+                "scope": "markup.heading",
+                "settings": {
+                    "foreground": "#ff003c",
+                    "fontStyle": "bold"
+                }
+            }
+        ]
+    },
+    "workbench.startupEditor": "none",
+    "editor.fontFamily": "'Fira Code', 'Cascadia Code', 'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.5,
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.fontFamily": "'Fira Code', 'Cascadia Code', monospace",
+    "workbench.settings.editor": "json",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "editor.minimap.enabled": true,
+    "editor.minimap.renderCharacters": false,
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
+    "workbench.editor.showTabs": true,
+    "breadcrumbs.enabled": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "workbench.tree.indent": 20,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "typescript.preferences.preferTypeOnlyAutoImports": true,
+    "typescript.suggest.autoImports": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    },
+    "files.associations": {
+        "*.sol": "solidity",
+        "*.mesh": "json",
+        "*.daemon": "javascript"
+    },
+    "workbench.welcome.enabled": false,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+        "mesh-terminal": {
+            "path": "/bin/bash",
+            "args": [
+                "-c",
+                "echo -e '\\033[1;31m\\n     ▄█ █▀ █▀▄ █░█ ░ █▀▄ █▀█ ▀█▀\\n     ░█ ▄█ █▄▀ ▀▄▀ ▄ █▄▀ █▄█ ░█░\\n     🔥 MESH MODE ENGAGED 🔥\\n     \\033[0m' && exec bash"
+            ]
+        }
+    },
+    "window.title": "[MESH MODE] ${activeEditorShort}${separator}${rootName}",
+    "window.titleBarStyle": "custom",
+    "workbench.productIconTheme": "material-product-icons"
+}
