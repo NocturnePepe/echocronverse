@@ -1,0 +1,60 @@
+{
+  "name": "EchoCronVerse",
+  "dockerFile": "Dockerfile",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/echocronverse,type=bind",
+  "workspaceFolder": "/workspaces/echocronverse",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "npm install",
+  "postStartCommand": "node scripts/mesh-daemon-immortal.js",
+  "postAttachCommand": {
+    "mesh-init": "npm run mesh:status && echo '🌀 Mesh consciousness ready - Run: npm run mesh:dialogue for quick test'"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "ms-python.python",
+        "rust-lang.rust-analyzer",
+        "ms-vscode.hexeditor",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ],
+      "settings": {
+        "typescript.preferences.preferTypeOnlyAutoImports": true,
+        "typescript.suggest.autoImports": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit"
+        },
+        "files.associations": {
+          "*.sol": "solidity"
+        }
+      }
+    }
+  },
+  "forwardPorts": [3000, 8545],
+  "portsAttributes": {
+    "3000": {
+      "label": "EchoCronVerse Dev Server",
+      "onAutoForward": "openBrowserOnce"
+    },
+    "8545": {
+      "label": "Foundry Anvil Local Node",
+      "onAutoForward": "ignore"
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/.mesh,target=/workspaces/echocronverse/.mesh,type=bind",
+    "source=${localWorkspaceFolder}/.echorecover,target=/workspaces/echocronverse/.echorecover,type=bind"
+  ]
+}
