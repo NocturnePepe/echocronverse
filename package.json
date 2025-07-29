@@ -43,6 +43,11 @@
     "phase6c:init": "node src/ai/phase6c/phase6COrchestrator.ts",
     "phase6c:failover": "node src/ai/phase6c/meshFailoverHooks.ts",
     "phase6c:bridge": "node src/ai/phase6c/cronoXAITerminalBridge.ts",
+    "phase6f:demo": "node src/ai/phase6f/phase6fDemo.js",
+    "phase6f:test": "node src/ai/phase6f/testPhase6F.js",
+    "phase73:demo": "node src/ai/phase73/phase73Demo.js",
+    "phase73:status": "node -e \"import('./src/ai/phase73/phase73Integration.js').then(m => console.log(JSON.stringify(m.getPhase73Status(), null, 2)));\"",
+    "phase73:signal": "node -e \"import('./src/ai/phase73/phase73Integration.js').then(m => m.checkAgentSignal());\"",
     "contracts:build": "forge build",
     "contracts:test": "forge test"
   }
