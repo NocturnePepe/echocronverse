@@ -39,6 +39,11 @@
     "mesh:validate": "node scripts/meshAgent-validate.js",
     "mesh:config": "cat .copilot-mesh-config.json 2>/dev/null || echo 'Copilot config not found'",
     "mesh:autorecovery": "node scripts/echomesh-autorecovery.js",
-    "restart:mesh": "npm run mesh:autorecovery || npm run mesh:start"
+    "restart:mesh": "npm run mesh:autorecovery || npm run mesh:start",
+    "phase6c:init": "node src/ai/phase6c/phase6COrchestrator.ts",
+    "phase6c:failover": "node src/ai/phase6c/meshFailoverHooks.ts",
+    "phase6c:bridge": "node src/ai/phase6c/cronoXAITerminalBridge.ts",
+    "contracts:build": "forge build",
+    "contracts:test": "forge test"
   }
 }
