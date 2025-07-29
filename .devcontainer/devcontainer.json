@@ -1,6 +1,6 @@
 {
-    "name": "EchoCronVerse",
-    "dockerFile": "Dockerfile",
+    "name": "postCreateCommand": "npm install && chmod +x scripts/*.js",
+    "postStartCommand": "echo '🌀 Mesh Mode Ready' && source ~/.mesh_profile 2>/dev/null || echo 'Mesh profile will be applied on terminal open'",choCronVerse","dockerFile": "Dockerfile",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/echocronverse,type=bind",
     "workspaceFolder": "/workspaces/echocronverse",
     "remoteUser": "vscode",
