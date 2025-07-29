@@ -1,63 +1,60 @@
 {
-    "name": "postCreateCommand": "npm install && chmod +x scripts/*.js",
-    "postStartCommand": "echo '🌀 Mesh Mode Ready' && source ~/.mesh_profile 2>/dev/null || echo 'Mesh profile will be applied on terminal open'",choCronVerse","dockerFile": "Dockerfile",
-    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/echocronverse,type=bind",
-    "workspaceFolder": "/workspaces/echocronverse",
-    "remoteUser": "vscode",
-    "features": {
-        "ghcr.io/devcontainers/features/node:1": {
-            "nodeGypDependencies": true,
-            "version": "18"
+  "name": "EchoCronVerse",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+  "workspaceFolder": "/workspaces/echocronverse",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "npm install",
+  "postStartCommand": "echo '🌀 Mesh Mode Ready - Use: source scripts/mesh-activate.sh'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ],
+      "settings": {
+        "workbench.colorTheme": "Default Dark+",
+        "workbench.colorCustomizations": {
+          "statusBar.background": "#0f0f0f",
+          "statusBar.foreground": "#e54242",
+          "activityBar.background": "#1f1f1f",
+          "activityBar.foreground": "#ff3c41",
+          "editor.background": "#0c0c0c",
+          "terminal.background": "#000000",
+          "terminal.foreground": "#FF3D00",
+          "focusBorder": "#ff003c"
         },
-        "ghcr.io/devcontainers/features/git:1": {},
-        "ghcr.io/devcontainers/features/github-cli:1": {}
-    },
-    "postCreateCommand": "npm install && chmod +x scripts/*.js && ./scripts/mesh-skin-transform.sh",
-    "postStartCommand": "source ~/.mesh_profile && node scripts/mesh-daemon-immortal.js",
-    "postAttachCommand": {
-        "mesh-init": "npm run mesh:status && echo '🌀 Mesh consciousness ready - Run: npm run mesh:dialogue for quick test'"
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-vscode.vscode-typescript-next",
-                "bradlc.vscode-tailwindcss",
-                "esbenp.prettier-vscode",
-                "ms-python.python",
-                "rust-lang.rust-analyzer",
-                "ms-vscode.hexeditor",
-                "GitHub.copilot",
-                "GitHub.copilot-chat"
-            ],
-            "settings": {
-                "typescript.preferences.preferTypeOnlyAutoImports": true,
-                "typescript.suggest.autoImports": true,
-                "editor.formatOnSave": true,
-                "editor.codeActionsOnSave": {
-                    "source.fixAll": "explicit"
-                },
-                "files.associations": {
-                    "*.sol": "solidity"
-                }
-            }
-        }
-    },
-    "forwardPorts": [
-        3000,
-        8545
-    ],
-    "portsAttributes": {
-        "3000": {
-            "label": "EchoCronVerse Dev Server",
-            "onAutoForward": "openBrowserOnce"
+        "window.title": "[MESH MODE] ${activeEditorShort}${separator}${rootName}",
+        "typescript.preferences.preferTypeOnlyAutoImports": true,
+        "typescript.suggest.autoImports": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit"
         },
-        "8545": {
-            "label": "Foundry Anvil Local Node",
-            "onAutoForward": "ignore"
+        "files.associations": {
+          "*.sol": "solidity"
         }
+      }
+    }
+  },
+  "forwardPorts": [3000, 8545],
+  "portsAttributes": {
+    "3000": {
+      "label": "EchoCronVerse Dev Server",
+      "onAutoForward": "openBrowserOnce"
     },
-    "mounts": [
-        "source=${localWorkspaceFolder}/.mesh,target=/workspaces/echocronverse/.mesh,type=bind",
-        "source=${localWorkspaceFolder}/.echorecover,target=/workspaces/echocronverse/.echorecover,type=bind"
-    ]
+    "8545": {
+      "label": "Foundry Anvil Local Node",
+      "onAutoForward": "ignore"
+    }
+  }
 }
