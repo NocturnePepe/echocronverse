@@ -9,10 +9,8 @@
     "deepseek",
     "gemini"
   ],
-  "phaseLevel": "7.5_contest_framework",
-  "lastSync": "2025-07-29T09:53:32.674Z",
+  "phaseLevel": "7.5",
+  "lastSync": "2025-07-29T09:58:51.724Z",
   "observerChain": true,
-  "copilotReady": true,
-  "shadowObserver": true,
-  "spiritGuardians": true
+  "copilotReady": true
 }
