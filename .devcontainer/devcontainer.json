@@ -15,11 +15,15 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.vscode-typescript-next",
-        "bradlc.vscode-tailwindcss",
+        "github.copilot",
+        "github.copilot-chat",
+        "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "GitHub.copilot",
-        "GitHub.copilot-chat"
+        "christian-kohler.path-intellisense",
+        "firsttris.vscode-jest-runner",
+        "ms-vscode.vscode-typescript-next",
+        "github.vscode-codeql",
+        "bradlc.vscode-tailwindcss"
       ],
       "settings": {
         "workbench.colorTheme": "Default Dark+",
@@ -46,8 +50,19 @@
           "source.fixAll": "explicit"
         },
         "files.associations": {
-          "*.sol": "solidity"
-        }
+          "*.sol": "solidity",
+          "*.mesh": "json",
+          "*.daemon": "javascript"
+        },
+        "eslint.validate": [
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact"
+        ],
+        "jest.jestCommandLine": "npm test",
+        "codeql-scanner.github.owner": "NocturnePepe",
+        "codeql-scanner.github.repo": "echocronverse"
       }
     }
   },
