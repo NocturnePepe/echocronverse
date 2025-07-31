@@ -71,7 +71,7 @@
       "onAutoForward": "silent"
     }
   },
-  "postCreateCommand": "npm install && chmod +x scripts/meshAgent.js && chmod +x scripts/meshAgent-quick.js && chmod +x scripts/echomesh-autorecovery.js && echo '🌟 Mesh Agent Shell Restored — No Ghost Extensions Detected ✅'",
+  "postCreateCommand": "npm install && chmod +x scripts/*.js && chmod +x scripts/*.sh && rm -rf ~/.vscode-server/extensions/esbenp.prettier-vscode* 2>/dev/null && rm -rf ~/.vscode-server/extensions/dbaeumer.vscode-eslint* 2>/dev/null && rm -rf ~/.vscode/extensions/esbenp.prettier-vscode* 2>/dev/null && rm -rf ~/.vscode/extensions/dbaeumer.vscode-eslint* 2>/dev/null && code --uninstall-extension esbenp.prettier-vscode 2>/dev/null && code --uninstall-extension dbaeumer.vscode-eslint 2>/dev/null && echo '🌟 Mesh Agent Shell Restored — Deep Memory Purged — No Ghost Extensions ✅'",
   "postStartCommand": "npm run mesh:autorecovery",
   "mounts": [
     "source=echocronverse-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
