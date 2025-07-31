@@ -1,0 +1,80 @@
+{
+  "name": "EchoCronVerse",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+  "workspaceFolder": "/workspaces/echocronverse",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "npm install",
+  "postStartCommand": "export MESH_MODE=true && echo '🌀 Mesh Mode Auto-Activated' && source scripts/mesh-activate.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.copilot",
+        "github.copilot-chat",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "christian-kohler.path-intellisense",
+        "firsttris.vscode-jest-runner",
+        "ms-vscode.vscode-typescript-next",
+        "github.vscode-codeql",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "workbench.colorTheme": "Default Dark+",
+        "workbench.colorCustomizations": {
+          "statusBar.background": "#0f0f0f",
+          "statusBar.foreground": "#e54242",
+          "activityBar.background": "#1f1f1f",
+          "activityBar.foreground": "#ff3c41",
+          "editor.background": "#0c0c0c",
+          "terminal.background": "#000000",
+          "terminal.foreground": "#00ff88",
+          "focusBorder": "#ff003c"
+        },
+        "window.title": "[MESH MODE] ${activeEditorShort}${separator}${rootName}",
+        "terminal.integrated.env.linux": {
+          "MESH_MODE": "true",
+          "GROK_FALLBACK_MODE": "true",
+          "PHASE_LEVEL": "6F"
+        },
+        "typescript.preferences.preferTypeOnlyAutoImports": true,
+        "typescript.suggest.autoImports": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit"
+        },
+        "files.associations": {
+          "*.sol": "solidity",
+          "*.mesh": "json",
+          "*.daemon": "javascript"
+        },
+        "eslint.validate": [
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact"
+        ],
+        "jest.jestCommandLine": "npm test",
+        "codeql-scanner.github.owner": "NocturnePepe",
+        "codeql-scanner.github.repo": "echocronverse"
+      }
+    }
+  },
+  "forwardPorts": [3000, 8545],
+  "portsAttributes": {
+    "3000": {
+      "label": "EchoCronVerse Dev Server",
+      "onAutoForward": "openBrowserOnce"
+    },
+    "8545": {
+      "label": "Foundry Anvil Local Node",
+      "onAutoForward": "ignore"
+    }
+  }
+}

@@ -1,8 +1,9 @@
+#!/usr/bin/env node
 // 🔬 PHASE 7.7 STRESS TEST SUITE
 // Tests mesh performance under load
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 console.log('🔬 MESH PERFORMANCE STRESS TEST INITIATED');
 console.log('==========================================');
