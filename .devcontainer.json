@@ -1,47 +1,65 @@
 {
   "name": "EchoCronVerse - Phase 7.5 Mesh Development",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
-  
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/node:1": {
       "version": "20"
     }
   },
-  
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-vscode.vscode-typescript-next",
         "bradlc.vscode-tailwindcss",
-        "esbenp.prettier-vscode",
         "ms-vscode.vscode-json",
         "GitHub.copilot",
-        "GitHub.copilot-chat",
-        "ms-vscode.vscode-eslint"
+        "GitHub.copilot-chat"
+      ],
+      "unwantedRecommendations": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ms-vscode.vscode-eslint",
+        "rvest.vs-code-prettier-eslint",
+        "inferrinizzard.prettier-sql-vscode",
+        "numso.prettier-standard-vscode",
+        "passionkind.prettier-vscode-with-tabs",
+        "fnando.linter",
+        "mike-co.import-sorter"
       ],
       "settings": {
         "typescript.preferences.preferTypeOnlyAutoImports": true,
         "typescript.suggest.autoImports": true,
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false,
         "tailwindCSS.experimental.classRegex": [
-          ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-          ["classnames\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
-          ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+          [
+            "clsx\\(([^)]*)\\)",
+            "(?:'|\"|`)([^']*)(?:'|\"|`)"
+          ],
+          [
+            "classnames\\(([^)]*)\\)",
+            "(?:'|\"|`)([^']*)(?:'|\"|`)"
+          ],
+          [
+            "cn\\(([^)]*)\\)",
+            "(?:'|\"|`)([^']*)(?:'|\"|`)"
+          ]
         ]
       }
     }
   },
-  
-  "forwardPorts": [3000, 5173, 8545],
+  "forwardPorts": [
+    3000,
+    5173,
+    8545
+  ],
   "portsAttributes": {
     "3000": {
       "label": "EchoCronVerse App",
       "onAutoForward": "notify"
     },
     "5173": {
-      "label": "Vite Dev Server", 
+      "label": "Vite Dev Server",
       "onAutoForward": "notify"
     },
     "8545": {
@@ -49,17 +67,12 @@
       "onAutoForward": "silent"
     }
   },
-  
   "postCreateCommand": "npm install && chmod +x scripts/meshAgent.js && chmod +x scripts/meshAgent-quick.js && chmod +x scripts/echomesh-autorecovery.js",
-  
   "postStartCommand": "npm run mesh:autorecovery",
-  
   "mounts": [
     "source=echocronverse-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
   ],
-  
   "remoteUser": "node",
-  
   "containerEnv": {
     "ECHOMESH_PHASE": "7.5",
     "MESH_AUTO_SYNC": "true",
