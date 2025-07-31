@@ -4,14 +4,18 @@
 	// List of extensions which should be recommended for users of this workspace.
 	"recommendations": [
 		"github.copilot",
-		"github.copilot-chat",
-		"ms-vscode.vscode-typescript-next"
+		"github.copilot-chat"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
-		"esbenp.prettier-vscode",
+		"github.vscode-codeql",
 		"dbaeumer.vscode-eslint",
-		"ms-vscode.vscode-eslint",
+		"ms-vscode.vscode-eslint", 
+		"firsttris.vscode-jest-runner",
+		"esbenp.prettier-vscode",
+		"bradlc.vscode-tailwindcss",
+		"ms-vscode.vscode-typescript-next",
+		"christian-kohler.path-intellisense",
 		"rvest.vs-code-prettier-eslint",
 		"inferrinizzard.prettier-sql-vscode",
 		"numso.prettier-standard-vscode",

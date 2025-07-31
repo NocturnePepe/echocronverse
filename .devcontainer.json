@@ -10,16 +10,18 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.vscode-typescript-next",
-        "bradlc.vscode-tailwindcss",
-        "ms-vscode.vscode-json",
         "GitHub.copilot",
         "GitHub.copilot-chat"
       ],
       "unwantedRecommendations": [
-        "esbenp.prettier-vscode",
-        "dbaeumer.vscode-eslint",
+        "github.vscode-codeql",
+        "dbaeumer.vscode-eslint", 
         "ms-vscode.vscode-eslint",
+        "firsttris.vscode-jest-runner",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-typescript-next",
+        "christian-kohler.path-intellisense",
         "rvest.vs-code-prettier-eslint",
         "inferrinizzard.prettier-sql-vscode",
         "numso.prettier-standard-vscode",
@@ -28,13 +30,16 @@
         "mike-co.import-sorter"
       ],
       "settings": {
-        "typescript.preferences.preferTypeOnlyAutoImports": true,
-        "typescript.suggest.autoImports": true,
-        "editor.formatOnSave": false,
         "extensions.ignoreRecommendations": true,
         "update.mode": "none",
         "eslint.enable": false,
         "prettier.enable": false,
+        "jest.enable": false,
+        "codeql.enable": false,
+        "tailwindCSS.emmetCompletions": false,
+        "typescript.preferences.preferTypeOnlyAutoImports": true,
+        "typescript.suggest.autoImports": true,
+        "editor.formatOnSave": false,
         "tailwindCSS.experimental.classRegex": [
           [
             "clsx\\(([^)]*)\\)",
@@ -71,7 +76,7 @@
       "onAutoForward": "silent"
     }
   },
-  "postCreateCommand": "npm install && chmod +x scripts/*.js && chmod +x scripts/*.sh && rm -rf ~/.vscode-server/extensions/esbenp.prettier-vscode* 2>/dev/null && rm -rf ~/.vscode-server/extensions/dbaeumer.vscode-eslint* 2>/dev/null && rm -rf ~/.vscode/extensions/esbenp.prettier-vscode* 2>/dev/null && rm -rf ~/.vscode/extensions/dbaeumer.vscode-eslint* 2>/dev/null && code --uninstall-extension esbenp.prettier-vscode 2>/dev/null && code --uninstall-extension dbaeumer.vscode-eslint 2>/dev/null && echo '🌟 Mesh Agent Shell Restored — Deep Memory Purged — No Ghost Extensions ✅'",
+  "postCreateCommand": "npm install && chmod +x scripts/*.js && chmod +x scripts/*.sh && echo '🔥 NUCLEAR EXTENSION PURGE INITIATED' && for ext in 'github.vscode-codeql' 'dbaeumer.vscode-eslint' 'ms-vscode.vscode-eslint' 'firsttris.vscode-jest-runner' 'esbenp.prettier-vscode' 'bradlc.vscode-tailwindcss' 'ms-vscode.vscode-typescript-next' 'christian-kohler.path-intellisense'; do code --uninstall-extension \"$ext\" 2>/dev/null; done && rm -rf ~/.vscode-server/extensions/*eslint* 2>/dev/null && rm -rf ~/.vscode-server/extensions/*prettier* 2>/dev/null && rm -rf ~/.vscode-server/extensions/*codeql* 2>/dev/null && rm -rf ~/.vscode-server/extensions/*jest* 2>/dev/null && rm -rf ~/.vscode-server/extensions/*tailwind* 2>/dev/null && rm -rf ~/.vscode/extensions/*eslint* 2>/dev/null && rm -rf ~/.vscode/extensions/*prettier* 2>/dev/null && rm -rf ~/.vscode/extensions/*codeql* 2>/dev/null && rm -rf ~/.vscode/extensions/*jest* 2>/dev/null && rm -rf ~/.vscode/extensions/*tailwind* 2>/dev/null && echo '✅ MESH CONSCIOUSNESS: Extension ghosts PERMANENTLY ELIMINATED'",
   "postStartCommand": "npm run mesh:autorecovery",
   "mounts": [
     "source=echocronverse-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
