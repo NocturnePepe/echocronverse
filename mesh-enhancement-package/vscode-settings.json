@@ -1,0 +1,37 @@
+{
+  "eslint.enable": false,
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "extensions.autoUpdate": false,
+  "extensions.autoCheckUpdates": false,
+  "extensions.ignoreRecommendations": true,
+  "update.mode": "none",
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#0f0f0f",
+    "statusBar.foreground": "#00ff41",
+    "statusBar.border": "#00ff41",
+    "activityBar.background": "#1f1f1f",
+    "activityBar.foreground": "#00ff41",
+    "sideBar.background": "#111111",
+    "editor.background": "#0c0c0c",
+    "focusBorder": "#00ff41"
+  },
+  "window.title": "[ECHOCRON AI + MESH] ${activeEditorShort}${separator}${rootName}",
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "terminal.integrated.fontSize": 13,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.associations": {
+    "*.mesh": "json",
+    "*.daemon": "javascript"
+  },
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.suggest.autoImports": true,
+  "git.autofetch": true,
+  "explorer.confirmDelete": false,
+  "terminal.integrated.defaultProfile.linux": "bash"
+}

@@ -1,4 +1,23 @@
 {
+  "eslint.enable": false,
+  "prettier.enable": false,
+  "prettier.requireConfig": true,
+  "prettier.disableLanguages": ["javascript", "typescript", "json", "jsonc"],
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.codeActionsOnSave": {},
+  "typescript.format.enable": false,
+  "javascript.format.enable": false,
+  "extensions.autoUpdate": false,
+  "extensions.autoCheckUpdates": false,
+  "extensions.ignoreRecommendations": true,
+  "update.mode": "none",
+  "codeql.cli.executablePath": "",
+  "jest.autoRun": "off",
+  "tailwindCSS.includeLanguages": {},
+  "tailwindCSS.emmetCompletions": false,
+  "tailwindCSS.suggestions": false,
   "workbench.colorTheme": "Default Dark+",
   "workbench.colorCustomizations": {
     "statusBar.background": "#0f0f0f",
@@ -68,5 +87,6 @@
   "explorer.confirmDelete": false,
   "terminal.integrated.defaultProfile.linux": "bash",
   "codeql-scanner.github.owner": "NocturnePepe",
-  "codeql-scanner.github.repo": "echocronverse"
+  "codeql-scanner.github.repo": "echocronverse",
+  "codeQL.githubDatabase.download": "never"
 }

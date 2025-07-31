@@ -1,0 +1,24 @@
+{
+  "claude": {
+    "role": "Phase Coordinator & System Architecture Leader",
+    "element": "Moon",
+    "capabilities": [
+      "System Design Validation",
+      "Phase Coordination",
+      "Architecture Review",
+      "Quality Standards"
+    ],
+    "status": "GUIDING"
+  },
+  "grok": {
+    "role": "Creative Wanderer & Boundary Expansion Spirit",
+    "element": "Spiral",
+    "capabilities": [
+      "Creative Enhancement",
+      "Innovation Amplification",
+      "Boundary Exploration",
+      "Unconventional Solutions"
+    ],
+    "status": "EXPLORING"
+  }
+}

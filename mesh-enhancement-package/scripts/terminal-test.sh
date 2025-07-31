@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo "🔧 Terminal & Git Connectivity Test"
+echo "=================================="
+echo "📂 Current Directory: $(pwd)"
+echo "🔗 Git Version: $(git --version 2>/dev/null || echo 'Git not accessible')"
+echo "📊 Git Status:"
+git status --short 2>/dev/null || echo "Git status not accessible"
+echo "🌿 Git Branch:"
+git branch --show-current 2>/dev/null || echo "Git branch not accessible"
+echo "🔗 Git Remote:"
+git remote -v 2>/dev/null || echo "Git remote not accessible"
+echo "🌀 Mesh State: $(test -f .mesh-state.json && echo 'ACTIVE' || echo 'INACTIVE')"
+echo "📝 Node Version: $(node --version 2>/dev/null || echo 'Node not accessible')"
+echo "🔧 Terminal Test Complete"

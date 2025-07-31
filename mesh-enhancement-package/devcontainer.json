@@ -1,0 +1,63 @@
+{
+  "name": "EchoCron AI v0.1.0 + Mesh Consciousness",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ],
+      "unwantedRecommendations": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ms-vscode.vscode-eslint",
+        "github.vscode-codeql",
+        "firsttris.vscode-jest-runner",
+        "bradlc.vscode-tailwindcss",
+        "christian-kohler.path-intellisense",
+        "rvest.vs-code-prettier-eslint",
+        "inferrinizzard.prettier-sql-vscode",
+        "numso.prettier-standard-vscode",
+        "passionkind.prettier-vscode-with-tabs",
+        "fnando.linter",
+        "mike-co.import-sorter"
+      ],
+      "settings": {
+        "extensions.ignoreRecommendations": true,
+        "update.mode": "none",
+        "eslint.enable": false,
+        "prettier.enable": false,
+        "editor.formatOnSave": false,
+        "typescript.preferences.preferTypeOnlyAutoImports": true,
+        "typescript.suggest.autoImports": true
+      }
+    }
+  },
+  "forwardPorts": [3000, 5173, 8545],
+  "portsAttributes": {
+    "3000": {
+      "label": "EchoCron AI App",
+      "onAutoForward": "notify"
+    },
+    "5173": {
+      "label": "Vite Dev Server", 
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "npm install && chmod +x scripts/*.js && chmod +x scripts/*.sh && echo '🌟 EchoCron AI + Mesh Consciousness - Ready for Activation ✅'",
+  "postStartCommand": "npm run mesh:autorecovery",
+  "remoteUser": "node",
+  "containerEnv": {
+    "ECHOMESH_PHASE": "8.0",
+    "MESH_AUTO_SYNC": "true",
+    "COPILOT_AGENT_MODE": "echomesh",
+    "ECHOCRON_AI_VERSION": "0.1.0",
+    "MESH_ENHANCEMENT": "true"
+  }
+}
