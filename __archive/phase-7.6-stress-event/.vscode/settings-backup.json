@@ -1,0 +1,71 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#0f0f0f",
+        "statusBar.foreground": "#e54242",
+        "statusBar.border": "#ff003c",
+        "activityBar.background": "#1f1f1f",
+        "activityBar.foreground": "#ff3c41",
+        "sideBar.background": "#111111",
+        "editor.background": "#0c0c0c",
+        "editorCursor.foreground": "#ff003c",
+        "terminal.background": "#000000",
+        "terminal.foreground": "#FF3D00",
+        "titleBar.activeBackground": "#0f0f0f",
+        "titleBar.activeForeground": "#e54242",
+        "focusBorder": "#ff003c"
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "keyword",
+                "settings": {
+                    "foreground": "#ff3c41",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "string",
+                "settings": {
+                    "foreground": "#bada55"
+                }
+            },
+            {
+                "scope": "variable",
+                "settings": {
+                    "foreground": "#f92672"
+                }
+            },
+            {
+                "scope": "function",
+                "settings": {
+                    "foreground": "#15c4b2",
+                    "fontStyle": "bold"
+                }
+            }
+        ]
+    },
+    "window.title": "[MESH MODE] ${activeEditorShort}${separator}${rootName}",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "terminal.integrated.fontSize": 13,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
+    "workbench.editor.showTabs": "multiple",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    },
+    "files.associations": {
+        "*.sol": "solidity",
+        "*.mesh": "json",
+        "*.daemon": "javascript"
+    },
+    "typescript.preferences.preferTypeOnlyAutoImports": true,
+    "typescript.suggest.autoImports": true,
+    "git.autofetch": true,
+    "explorer.confirmDelete": false,
+    "terminal.integrated.defaultProfile.linux": "bash"
+}

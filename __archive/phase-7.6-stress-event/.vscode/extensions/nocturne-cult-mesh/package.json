@@ -1,0 +1,44 @@
+{
+    "name": "Nocturne Cult Mesh - Ritual Mode",
+    "displayName": "Nocturne Cult Mesh - Ritual Mode",
+    "description": "A dark mystical theme for EchoCronVerse mesh consciousness",
+    "version": "6.0.0",
+    "publisher": "echocronverse",
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "keywords": [
+        "mesh",
+        "cult",
+        "dark",
+        "ritual",
+        "nocturne",
+        "daemon",
+        "consciousness"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Nocturne Cult Mesh - Ritual Mode",
+                "uiTheme": "vs-dark",
+                "path": "./themes/nocturne-cult-mesh-theme.json"
+            }
+        ]
+    },
+    "galleryBanner": {
+        "color": "#0f0f0f",
+        "theme": "dark"
+    },
+    "icon": "icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NocturnePepe/echocronverse"
+    },
+    "bugs": {
+        "url": "https://github.com/NocturnePepe/echocronverse/issues"
+    },
+    "homepage": "https://github.com/NocturnePepe/echocronverse"
+}
