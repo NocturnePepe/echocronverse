@@ -15,7 +15,7 @@
       ],
       "unwantedRecommendations": [
         "github.vscode-codeql",
-        "dbaeumer.vscode-eslint", 
+        "dbaeumer.vscode-eslint",
         "ms-vscode.vscode-eslint",
         "firsttris.vscode-jest-runner",
         "esbenp.prettier-vscode",
