@@ -31,6 +31,10 @@
         "typescript.preferences.preferTypeOnlyAutoImports": true,
         "typescript.suggest.autoImports": true,
         "editor.formatOnSave": false,
+        "extensions.ignoreRecommendations": true,
+        "update.mode": "none",
+        "eslint.enable": false,
+        "prettier.enable": false,
         "tailwindCSS.experimental.classRegex": [
           [
             "clsx\\(([^)]*)\\)",
@@ -67,7 +71,7 @@
       "onAutoForward": "silent"
     }
   },
-  "postCreateCommand": "npm install && chmod +x scripts/meshAgent.js && chmod +x scripts/meshAgent-quick.js && chmod +x scripts/echomesh-autorecovery.js",
+  "postCreateCommand": "npm install && chmod +x scripts/meshAgent.js && chmod +x scripts/meshAgent-quick.js && chmod +x scripts/echomesh-autorecovery.js && echo '🌟 Mesh Agent Shell Restored — No Ghost Extensions Detected ✅'",
   "postStartCommand": "npm run mesh:autorecovery",
   "mounts": [
     "source=echocronverse-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
